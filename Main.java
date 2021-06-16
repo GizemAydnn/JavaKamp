@@ -1,29 +1,28 @@
-
 public class Main {
 
     public static void main(String[] args) {
 
-        Category category1 = new Category(1, "Kategori: ","Tümü");
-        Category category2 = new Category(2, "Kategori: ", "Programlama");
+        Product product1 = new Product(1, "Lenovo V14", 15000, "16GB Ram", 10);  // Referans oluşturma
 
-        Category[] categories = {category1, category2};
-        for(Category category : categories) {
-            System.out.println(category.categoryName + " + " + category.categoryKind);
-        }
+        Product product2 = new Product();  // Referans oluşturma
+        product2.setId(2);
+        product2.setName("Lenovo V15");
+        product2.setDetail("16GB Ram");
+        product2.setDiscount(10);
+        product2.setUnitPrice(16000);
 
-        Cours course1 = new Cours(1, "Java & React kursu");
-        Cours course2 = new Cours(2, "C# & Angular kursu");
-        Cours course3 = new Cours(3, "Programlamaya giriş için temel kurs");
+        System.out.println(product2.getUnitPriceAfterDiscount());
 
-        Cours[] courses = {course1, course2, course3};
-        for(Cours cours : courses){
-            System.out.println("Kurs bilgisi: " + cours.coursId + " + " + cours.coursName);
-        }
+        Category category1 = new Category();
+        category1.setId(1);
+        category1.setName("İçecek");
 
-        Student student = new Student();
-        student.addToCourse(Cours list);
+        Category category2 = new Category();
+        category2.setId(2);
+        category2.setName("Yiyecek");
 
-        Student student1 = new Student();
-        student1.finisesCourse(Cours list1);
+        System.out.println(category1.getName());
+        System.out.println(category2.getName());
+
     }
 }
